@@ -1,0 +1,7 @@
+################################################################################
+# xosview2 "mem" graph Menu Extra
+################################################################################
+
+# 60s Memory Graph (30px, 2s update)
+#Swallow "xosview2" Action Exec "xosview2" exec xosview2 -geometry 30x24 -bg white -o "horizontalMargin: 0" -o "verticalMargin: 0" -o "verticalSpacing: 0" -o "captions: False" -o "labels: False" -o "usedlabels: False" -o "graphNumCols: 30" -o "mem: True" -o "memPriority: 20" -o "memGraph: True" -o "load: False" -o "cpu: False" -o "swap: False" -o "irqrate: False" -o "page: False" -o "gfx: False" -o "wlink: False" -o "net: False" -o "NFSStats: False" -o "NFSDStats: False" -o "interrupts: False" -o "tzone: False" -o "lmstemp: False" -o "coretemp: False" -o "bsdsensor: False" -o "battery: False" -o "disk: False" -o "filesys: False" -o "RAID: False"
+Swallow "xosview2_mini mem" Action Exec "xosview2_mini" exec xosview2_mini mem
