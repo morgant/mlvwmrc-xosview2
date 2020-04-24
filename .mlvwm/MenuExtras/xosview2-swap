@@ -1,0 +1,6 @@
+################################################################################
+# xosview2 "swap" graph Menu Extra
+################################################################################
+
+# 60s Swap Memory Graph (30px, 2s update)
+Swallow "xosview2_mini swap" Action Exec "xosview2_mini" exec xosview2_mini swap

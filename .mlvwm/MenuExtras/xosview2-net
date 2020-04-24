@@ -1,0 +1,6 @@
+################################################################################
+# xosview2 "net" graph Menu Extra
+################################################################################
+
+# 60s Network Graph (30px, 2s update)
+Swallow "xosview2_mini net" Action Exec "xosview2_mini" exec xosview2_mini net

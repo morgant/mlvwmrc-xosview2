@@ -1,0 +1,6 @@
+################################################################################
+# xosview2 "page" graph Menu Extra
+################################################################################
+
+# 60s Page Swap Graph (30px, 2s update)
+Swallow "xosview2_mini page" Action Exec "xosview2_mini" exec xosview2_mini page
