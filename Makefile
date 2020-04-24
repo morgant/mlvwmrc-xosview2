@@ -7,4 +7,5 @@ install:
 	cp $(BIN)/xosview2_mini $(HOME)/$(BIN)/xosview2_mini
 	chmod +x $(HOME)/$(BIN)/xosview2_mini
 	cp -R $(MENU_EXTRAS)/* $(HOME)/$(MENU_EXTRAS)
+	sed -i 's@Exec "xosview2_mini@Exec "$(HOME)/$(BIN)/xosview2_mini@g' $(HOME)/$(MENU_EXTRAS)/xosview2-*
 	sed -i 's@exec xosview2_mini@exec $(HOME)/$(BIN)/xosview2_mini@g' $(HOME)/$(MENU_EXTRAS)/xosview2-*
