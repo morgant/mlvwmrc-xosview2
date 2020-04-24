@@ -4,3 +4,8 @@
 
 # 60s Network Graph (30px, 2s update)
 Swallow "xosview2_mini net" Action Exec "xosview2_mini" exec xosview2_mini net
+
+# Note: you may copy and/or edit this MenuExtra to graph a specific network
+# interface, as follows:
+#
+#Swallow "xosview2_mini net" Action Exec "xosview2_mini" exec xosview2_mini net bge0

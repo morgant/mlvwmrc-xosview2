@@ -4,3 +4,8 @@
 
 # 60s Filesystem Graph (30px, 2s update)
 Swallow "xosview2_mini filesys" Action Exec "xosview2_mini" exec xosview2_mini filesys
+
+# Note: you may copy and/or edit this MenuExtra to graph a specific filesystem
+# mount point, as follows:
+#
+#Swallow "xosview2_mini filesys" Action Exec "xosview2_mini" exec xosview2_mini filesys /home

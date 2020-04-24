@@ -37,6 +37,8 @@ Edit your `~/.mlvwm/MenuBar` file to insert any of the following MenuExtras you'
     Read .mlvwm/MenuExtras/xosview2-page
     Read .mlvwm/MenuExtras/xosview2-swap
 
+_Note_: You may make copies of the `xosview2-filesys` & `xosview2-net` MenuExtras and edit to show graphs of specific filesystem mount points or network interfaces, respectively. See those MenuExtras for details.
+
 Then restart `mlvwm`.
 
 ## LICENSE
