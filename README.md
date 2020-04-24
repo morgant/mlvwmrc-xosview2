@@ -7,6 +7,11 @@ A set of [Xosview2](http://xosview.sourceforge.net/) additions for MLVWM (specif
 
 * System load
 * Memory usage
+* Swap usage
+* Filesystem usage
+* Page activity
+* Disk activity
+* Network activity
 
 ## PREREQUISITES
 
@@ -24,8 +29,13 @@ The following will install the appropriate MenuExtras in `~/.mlvwm/MenuExtras`:
 
 Edit your `~/.mlvwm/MenuBar` file to insert any of the following MenuExtras you'd like to use:
 
+    Read .mlvwm/MenuExtras/xosview2-disk
+    Read .mlvwm/MenuExtras/xosview2-filesys
     Read .mlvwm/MenuExtras/xosview2-load
-    Read .mlvwm/MenuExtras/apmstats-mem
+    Read .mlvwm/MenuExtras/xosview2-mem
+    Read .mlvwm/MenuExtras/xosview2-net
+    Read .mlvwm/MenuExtras/xosview2-page
+    Read .mlvwm/MenuExtras/xosview2-swap
 
 Then restart `mlvwm`.
 
