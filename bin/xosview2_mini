@@ -16,6 +16,7 @@ usage() {
   load            : load average
   mem             : memory usage
   net [interface] : network activity
+  page            : memory page activity
   swap            : swap usage"
 }
 
@@ -29,7 +30,7 @@ while [ $# -gt 0 ]; do
       usage
       exit 0
       ;;
-    disk|filesys|load|mem|net|swap)
+    disk|filesys|load|mem|net|page|swap)
       meter="$1"
       shift
       custom_options=""
