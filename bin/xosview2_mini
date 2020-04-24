@@ -4,15 +4,54 @@
 # xosview2_mini - generate a small 60 second graph for a meter
 # 
 
-format="$1" # load, mem, swap, or net
-custom_options=""
-case "$format" in
-  "filesys")
-    custom_options="-o ${format}Mounts:${2}"
-    ;;
-  "net")
-    custom_options="-o ${format}Iface:${2}"
-    ;;
-esac
+tool="$(basename "$0")"
 
-xosview2 -title "xosview2_mini ${format}" -geometry 30x24 -bg white -o "horizontalMargin: 0" -o "verticalMargin: 0" -o "verticalSpacing: 0" -o "captions: False" -o "labels: False" -o "usedlabels: False" -o "graphNumCols: 30" -o "load: False" -o "cpu: False" -o "mem: False" -o "swap: False" -o "irqrate: False" -o "page: False" -o "gfx: False" -o "wlink: False" -o "net: False" -o "NFSStats: False" -o "NFSDStats: False" -o "interrupts: False" -o "tzone: False" -o "lmstemp: False" -o "coretemp: False" -o "bsdsensor: False" -o "battery: False" -o "disk: False" -o "filesys: False" -o "RAID: False" -o "${format}: True" -o "${format}Priority: 20" -o "${format}Graph: True" $custom_options
+usage() {
+  echo "$tool [-h] <meter>
+
+  Meters:
+
+  disk            : disk activity
+  filesys [mount] : disk usage
+  load            : load average
+  mem             : memory usage
+  net [interface] : network activity
+  swap            : swap usage"
+}
+
+if [ $# = 0 ]; then
+  usage
+  exit 1
+fi
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    disk|filesys|load|mem|net|swap)
+      meter="$1"
+      shift
+      custom_options=""
+      if [ -n "$1" ]; then
+        case "$meter" in
+          filesys)
+              custom_options="-o ${meter}Mounts:${1}"
+              shift
+            ;;
+          net)
+            custom_options="-o ${meter}Iface:${1}"
+            shift
+            ;;
+        esac
+      fi
+      ;;
+    *)
+      echo "Unknown meter or option '$1'!"
+      echo "Exiting."
+      exit 1
+      ;;
+  esac
+done
+
+xosview2 -title "xosview2_mini ${meter}" -geometry 30x24 -bg white -o "horizontalMargin: 0" -o "verticalMargin: 0" -o "verticalSpacing: 0" -o "captions: False" -o "labels: False" -o "usedlabels: False" -o "graphNumCols: 30" -o "load: False" -o "cpu: False" -o "mem: False" -o "swap: False" -o "irqrate: False" -o "page: False" -o "gfx: False" -o "wlink: False" -o "net: False" -o "NFSStats: False" -o "NFSDStats: False" -o "interrupts: False" -o "tzone: False" -o "lmstemp: False" -o "coretemp: False" -o "bsdsensor: False" -o "battery: False" -o "disk: False" -o "filesys: False" -o "RAID: False" -o "${meter}: True" -o "${meter}Priority: 20" -o "${meter}Graph: True" $custom_options
