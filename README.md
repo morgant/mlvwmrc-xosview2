@@ -70,6 +70,18 @@ xosview*meterLabelColor: black
 xosview*usedLabelColor: black
 ```
 
+You can merge your `.Xresources`/`.Xdefaults` changes by logging out and back in, or using one of the following commands (replacing `.Xresources` with `.Xdefaults`, if appropriate):
+
+```
+xrdb -merge ~/.Xresources
+```
+
+Or:
+
+```
+xrdb -load ~/.Xresources
+```
+
 ## LICENSE
 
 Released under the [MIT License](LICENSE).
